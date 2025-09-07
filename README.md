@@ -22,3 +22,8 @@
   <li>Create user first: bin/console user:create -a -p <password> --firstName <firstname> --lastName <lastname> --email <email> <username></li>
   <li>Catalouges -> Products -> select a product (...) -> Cross Selling tab -> save</li>
 </ol>
+
+<h2>CROSS SELLING CUSTOM FIELD</h2>
+
+<p>By running bin/console plugin:update/install - will automatically populate custom fields for cross selling.</p>
+
