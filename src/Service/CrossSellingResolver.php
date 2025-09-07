@@ -18,7 +18,11 @@ class CrossSellingResolver
 
     public function __construct(
         SystemConfigService $systemConfig,
+
+        #[Autowire(service: 'product.repository')]
         EntityRepository $productRepository,
+
+        #[Autowire(service: 'currency.repository')]
         EntityRepository $currencyRepository,
     ) {
         $this->systemConfig = $systemConfig;
