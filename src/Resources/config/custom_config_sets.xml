@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-field-sets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/CustomField/Schema/custom_field_set.xsd">
+
+    <custom-field-set name="minimal_offcanvas_cross_selling" global="false">
+        <label>Minimal Offcanvas Cross-Selling</label>
+
+        <custom-fields>
+            <custom-field name="cross_selling_group" type="entity">
+                <label>Cross-Selling Group (optional override)</label>
+                <config>
+                    <entity>product_cross_selling</entity>
+                </config>
+            </custom-field>
+        </custom-fields>
+
+        <relations>
+            <relation entity="product"/>
+        </relations>
+    </custom-field-set>
+</custom-field-sets>

@@ -1,0 +1,101 @@
+{% block page_checkout_minimal_offcanvas %}
+<div style="padding:1%" class="offcanvas-minimal-main-content">
+<div role="alert" aria-live="polite" class="alert alert-success d-flex align-items-center">
+    <span class="icon icon-checkmark-circle" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><defs><path d="M24 12c0 6.6274-5.3726 12-12 12S0 18.6274 0 12 5.3726 0 12 0s12 5.3726 12 12zM12 2C6.4772 2 2 6.4772 2 12s4.4772 10 10 10 10-4.4772 10-10S17.5228 2 12 2zM7.7071 12.2929 10 14.5858l6.2929-6.293c.3905-.3904 1.0237-.3904 1.4142 0 .3905.3906.3905 1.0238 0 1.4143l-7 7c-.3905.3905-1.0237.3905-1.4142 0l-3-3c-.3905-.3905-.3905-1.0237 0-1.4142.3905-.3905 1.0237-.3905 1.4142 0z" id="icons-default-checkmark-circle"></path></defs><use xlink:href="#icons-default-checkmark-circle" fill="#758CA3" fill-rule="evenodd"></use></svg>
+    </span>                                                    
+                                    
+    <div class="alert-content-container">                         
+        1 product added to your shopping cart.                                    
+    </div>
+</div>
+<div class="offcanvas-minimal"
+     style="
+        position: relative;
+        top: 0px;
+        right: 0px;
+        height: auto;
+        background: #fff;
+        color: #000;
+        z-index: 99999;   
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 8px;
+        padding: 20px;
+        opacity: 1;
+        display: block;
+        transform: none;
+     ">
+
+    <h3 class="mb-3">Added to your cart</h3>
+
+    {% if lineItem is defined %}
+        <div class="cart-item d-flex mb-3">
+            {% if lineItem.cover %}
+                <img src="{{ lineItem.cover.url }}" alt="{{ lineItem.label }}" width="80" class="me-3">
+            {% endif %}
+            <div>
+                <strong>{{ lineItem.label }}</strong><br>
+                {{ lineItem.quantity }} × {{ lineItem.price.unitPrice|currency }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="offcanvas-actions">
+        <a href="{{ path('frontend.checkout.cart.page') }}" class="btn btn-primary w-100 mb-2">
+            View Cart
+        </a>
+        <button class="btn btn-light w-100 close-offcanvas">
+            Continue Shopping
+        </button>
+    </div>
+    
+</div>
+{% if crossSelling %}
+<div class="offcanvas-minimal"
+     style="
+        position: relative;
+        top: 12px;
+        right: 0;
+        height: auto;
+        background: #fff;
+        color: #000;
+        z-index: 99999;   
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 8px;
+        padding: 20px;
+        opacity: 1;
+        display: block;
+        transform: none;
+    ">
+    <div class="offcanvas-cross-selling">
+        <h3 class="mb-3">Suggested Items</h3>
+        <div class="cross-selling-list">
+            {% for product in crossSelling %}
+            <div class="cross-selling-item flex items-center mb-3">
+                <div class="cart-item d-flex mb-3">
+                    <img src="{{ product.coverUrl }}" alt="{{ product.name }}" width="80" class="me-3">
+                    <div class="flex-grow">
+                        <div><strong>{{ product.name }}</strong></div>
+                        <div class="text-sm text-gray-500">
+                          {{ product.currencySymbol }} {{ product.priceGross }}
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-actions">
+                    <form class="minimal-offcanvas-add-to-cart" id="{{product.productId}}" method="post">
+                        <input type="hidden" name="lineItems[{{ product.productId }}][id]" value="{{ product.productId }}">
+                        <input type="hidden" name="lineItems[{{ product.productId }}][referencedId]" value="{{ product.productId }}">
+                        <input type="hidden" name="lineItems[{{ product.productId }}][type]" value="product">
+                        <input type="hidden" name="lineItems[{{ product.productId }}][stackable]" value="1">
+                        <input type="hidden" name="lineItems[{{ product.productId }}][removable]" value="1">
+                        <button type="submit" class="btn btn-sm btn-buy">+ ADD TO CART</button>
+                    </form>
+                </div>
+            </div
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{
+    "name": "minimal-off-canvas-cart/minimal-off-canvas-cart",
+    "description": "Minimal off-canvas cart plugin",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.7.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "MinimalOffCanvasCart\\MinimalOffCanvasCart",
+        "label": {
+            "de-DE": "Minimal Off-Canvas Cart",
+            "en-GB": "Minimal Off-Canvas Cart"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "MinimalOffCanvasCart\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MinimalOffCanvasCart\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

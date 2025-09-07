@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Minimal configuration</title>
+
+        <input-field type="text">
+            <name>textField</name>
+            <label>Test field with default value</label>
+            <defaultValue>test</defaultValue>
+        </input-field>
+
+        <input-field type="int">
+            <name>globalCrossSellingIndex</name>
+            <label>Global Cross-Selling Group Index</label>
+            <helpText>If product custom field is empty, this index will be used</helpText>
+            <defaultValue>1</defaultValue>
+        </input-field>
+
+    </card>
+</config>
