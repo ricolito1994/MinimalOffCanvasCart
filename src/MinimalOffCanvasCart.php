@@ -43,7 +43,7 @@ class MinimalOffCanvasCart extends Plugin
 
     public function update(UpdateContext $updateContext): void
     {
-        //$this->customFieldsInstall($updateContext);
+        $this->customFieldsInstall($updateContext);
     }
 
     public function postInstall(InstallContext $installContext): void
