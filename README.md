@@ -14,3 +14,11 @@
   <li>If changes are in frontend: bin/build-storefront.sh</li>
   <li>To run should be in root dir: /var/www/html </li>
 </ol>
+
+<h2>CROSS SELLING</h2>
+
+<ol>
+  <li>To add cross selling visit: http://localhost/admin</li>
+  <li>Create user first: bin/console user:create -a -p <password> --firstName <firstname> --lastName <lastname> --email <email> <username></li>
+  <li>Catalouges -> Products -> select a product (...) -> Cross Selling tab -> save</li>
+</ol>
