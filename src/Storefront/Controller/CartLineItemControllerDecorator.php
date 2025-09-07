@@ -51,6 +51,7 @@ class CartLineItemControllerDecorator
             $lineItemsData = $requestDataBag->get('lineItems');
             $clickedItem = null;
             $crossSelling = null;
+            $options = null;
 
             if ($lineItemsData) {
                 // Usually only one, but we take the last in case of multiple
@@ -62,11 +63,16 @@ class CartLineItemControllerDecorator
                 $clickedItem = $updatedCart->getLineItems()->get($addedId);
             }
 
+            
+
             if ($clickedItem && $clickedItem->getReferencedId()) {
                 $crossSelling = $this->crossSellingResolver->resolveCrossSelling(
                     $clickedItem->getReferencedId(),
                     $context->getContext()
                 );
+                if ($clickedItem->getPayload()['options'] ?? false) {
+                    $options = $clickedItem->getPayload()['options'];
+                }
             }
 
             $html = $this->twig->render(
@@ -75,6 +81,7 @@ class CartLineItemControllerDecorator
                     'cart' => $cart,
                     'lineItem' => $clickedItem,
                     'crossSelling' => $crossSelling,
+                    'options' => $options,
                 ]
             );
 

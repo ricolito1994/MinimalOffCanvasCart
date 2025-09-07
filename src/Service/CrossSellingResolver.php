@@ -38,6 +38,7 @@ class CrossSellingResolver
         $criteria->addAssociation('crossSellings.assignedProducts.product');
         $criteria->addAssociation('crossSellings.assignedProducts.product.cover.media');
         $criteria->addAssociation('crossSellings.assignedProducts.product.price');
+        $criteria->addAssociation('crossSellings.assignedProducts.product.options.group');
 
         /** @var ProductEntity|null $product */
         $product = $this->productRepository->search($criteria, $context)->first();
@@ -87,6 +88,15 @@ class CrossSellingResolver
                 ? $this->currencyRepository->search(new Criteria([$currencyId]), $context)->first()
                 : null;
 
+            $options = ($assigned->getOptions() && $assigned->getOptions()->count() > 0)
+                ? array_map(
+                    fn($o) => $o->getGroup()
+                        ? $o->getGroup()->getName() . ':' . $o->getName()
+                        : $o->getName(),
+                    $assigned->getOptions()->getElements() 
+                )
+                : [];
+
             $crossSellingProducts[] = [
                 'group' => $group->getName(),
                 'productId' => $assigned->getId(),
@@ -96,6 +106,7 @@ class CrossSellingResolver
                 'priceNet' => $price ? number_format($price->getNet(), 2, '.', '') : null,
                 'currencySymbol' => $currencyEntity?->getSymbol(),
                 'customFields' => $assigned->getCustomFields() ?? [],
+                'options' => $options
             ];
         }
 

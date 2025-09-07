@@ -33,9 +33,16 @@
             {% if lineItem.cover %}
                 <img src="{{ lineItem.cover.url }}" alt="{{ lineItem.label }}" width="80" class="me-3">
             {% endif %}
-            <div>
-                <strong>{{ lineItem.label }}</strong><br>
-                {{ lineItem.quantity }} × {{ lineItem.price.unitPrice|currency }}
+            <div class="flex-grow">
+                <div>
+                    <strong>{{ lineItem.label }}</strong><br>
+                    {{ lineItem.quantity }} × {{ lineItem.price.unitPrice|currency }}
+                </div>
+                {% if options is defined and options|length > 0 %}
+                <div>
+                    {{ options|map(opt => opt.group ~ ': ' ~ opt.option)|join(' | ') }}
+                </div>
+                {% endif %}
             </div>
         </div>
     {% endif %}
@@ -77,7 +84,10 @@
                     <div class="flex-grow">
                         <div><strong>{{ product.name }}</strong></div>
                         <div class="text-sm text-gray-500">
-                          {{ product.currencySymbol }} {{ product.priceGross }}
+                            {{ product.currencySymbol }} {{ product.priceGross }}
+                        </div>
+                        <div class="text-sm">
+                            {{ product.options|join(' | ') }}
                         </div>
                     </div>
                 </div>
