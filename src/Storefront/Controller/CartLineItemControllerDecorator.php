@@ -12,6 +12,7 @@ use Shopware\Core\Checkout\Cart\SalesChannel\CartService;
 use Twig\Environment;
 use MinimalOffCanvasCart\Service\CrossSellingResolver;
 
+#[Route(defaults: ['_routeScope' => ['storefront']])]
 class CartLineItemControllerDecorator
 {
     private CoreCartLineItemController $inner;
@@ -31,6 +32,12 @@ class CartLineItemControllerDecorator
         $this->crossSellingResolver = $crossSellingResolver;
     }
 
+    #[Route(
+        path: '/checkout/line-item/add',
+        name: 'frontend.checkout.line-item.add',
+        options: ['seo' => false],
+        methods: ['POST']
+    )]
     public function addLineItems(
         Cart $cart,
         RequestDataBag $requestDataBag,
@@ -77,6 +84,12 @@ class CartLineItemControllerDecorator
         return $response;
     }
 
+    #[Route(
+        path: '/checkout/line-item/delete/{id}',
+        name: 'frontend.checkout.line-item.delete',
+        options: ['seo' => false],
+        methods: ['POST']
+    )]
     public function deleteLineItem(
         Cart $cart,
         string $id,
@@ -85,7 +98,13 @@ class CartLineItemControllerDecorator
     ): Response {
         return $this->inner->deleteLineItem($cart, $id, $request, $context);
     }
-
+    
+    #[Route(
+        path: '/checkout/line-item/change-quantity/{id}',
+        name: 'frontend.checkout.line-item.change-quantity',
+        options: ['seo' => false],
+        methods: ['POST']
+    )]
     public function changeQuantity(
         Cart $cart,
         string $id,
