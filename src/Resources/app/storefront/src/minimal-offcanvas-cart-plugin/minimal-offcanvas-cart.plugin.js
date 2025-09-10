@@ -15,8 +15,6 @@ export default class MinimalOffCanvasCartPlugin extends Plugin {
                     ) {
                         const offcanvas = document.querySelector('.offcanvas');
                         //offcanvas.style.padding = "1%";
-                        
-                    console.log(node.classList);
                         offcanvas.style.overflowY = "auto";
                         this.offCanvasAddToCartFormEvents();
                         this.offCanvasLoaded = true;
