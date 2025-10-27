@@ -10,7 +10,7 @@
   <li>Create a plugin: bin/console plugin:create MinimalOffCanvasCart</li>
   <li>Activate and install: bin/console plugin:install --activate MinimalOffCanvasCart</li>
   <li>Refresh the plugin: bin/console plugin:refresh</li>
-  <li>To copy changes from shopware container -> <code>docker cp shopware:/var/www/html/. ./src</code></li>
+  <li>To copy changes from shopware container to your project folder -> <code>docker cp shopware:/var/www/html/. ./src</code></li>
   <li>Changes in .xml files mainly services.xml: bin/console plugin:update MinimalOffCanvasCart</li>
   <li>If changes are in frontend: bin/build-storefront.sh</li>
   <li>To run should be in root dir: /var/www/html </li>
@@ -27,5 +27,6 @@
 <h2>CROSS SELLING CUSTOM FIELD</h2>
 
 <p>By running bin/console plugin:update/install - will automatically populate custom fields for cross selling.</p>
+
 
 
