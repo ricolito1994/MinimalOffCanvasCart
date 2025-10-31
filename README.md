@@ -30,9 +30,10 @@
 
 <h2>MIGRATIONS</h2>
 <ul>
-  <li>- Create Migration : <code>./bin/console database:create-migration -p <PluginName> --name <MigrationName></code></li>
-  <li>- Run Migration : <code>./bin/console database:migrate <PluginName> --all</code></li>
+  <li>- Create Migration : <code>./bin/console database:create-migration -p (PluginName) --name (MigrationName)</code></li>
+  <li>- Run Migration : <code>./bin/console database:migrate (PluginName) --all</code></li>
 </ul>
+
 
 
 
