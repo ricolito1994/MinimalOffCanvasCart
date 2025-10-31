@@ -29,8 +29,11 @@
 <p>By running bin/console plugin:update/install - will automatically populate custom fields for cross selling.</p>
 
 <h2>MIGRATIONS</h2>
-- Create Migration : ./bin/console database:create-migration -p PriceOnRequest --name PriceOnRequestField
-- Run Migration : ./bin/console database:migrate SwagBasicExample --all
+<ul>
+  <li>- Create Migration : <code>./bin/console database:create-migration -p PriceOnRequest --name PriceOnRequestField</code></li>
+  <li>- Run Migration : <code>./bin/console database:migrate SwagBasicExample --all</code></li>
+</ul>
+
 
 
 
