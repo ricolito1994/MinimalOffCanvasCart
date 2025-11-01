@@ -34,6 +34,9 @@
   <li>- Run Migration : <code>./bin/console database:migrate (PluginName) --all</code></li>
 </ul>
 
+<h2>WATCH/HOT RELOAD STORE FRONT CHANGES</h2>
+<code>./bin/watch-storefront.sh</code>
+
 
 
 
