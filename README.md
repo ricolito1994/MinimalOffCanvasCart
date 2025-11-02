@@ -37,6 +37,14 @@
 <h2>WATCH/HOT RELOAD STORE FRONT CHANGES</h2>
 <code>./bin/watch-storefront.sh</code>
 
+<h2>Override Templates</h2>
+<ul>
+  <li>Product Price: <code>/storefront/component/product/card/price-unit.html.twig</code></li>
+  <li>Header Layout: <code>/storefront/layout/header/logo.html.twig</code></li>
+  <li>...more to come</li>
+</ul>
+
+
 
 
 
