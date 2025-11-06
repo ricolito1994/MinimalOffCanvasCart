@@ -44,6 +44,10 @@
   <li>...more to come</li>
 </ul>
 
+<h2>View Events</h2>
+<ul>
+  <li><code>bin/console debug:event</code></li>
+</ul>
 
 
 
