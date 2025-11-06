@@ -41,7 +41,7 @@
 <ul>
   <li>Product Price: <code>/storefront/component/product/card/price-unit.html.twig</code></li>
   <li>Header Layout: <code>/storefront/layout/header/logo.html.twig</code></li>
-  <li>to list all overridable templates <code>vendor/shopware/storefront/Resources/views/store</code></li>
+  <li>to list all overridable templates <code>find vendor/shopware/storefront/Resources/views -type f -name "*.html.twig"</code></li>
   <li>...more to come</li>
 </ul>
 
@@ -49,6 +49,7 @@
 <ul>
   <li><code>bin/console debug:event</code></li>
 </ul>
+
 
 
 
