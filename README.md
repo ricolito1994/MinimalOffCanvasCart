@@ -42,13 +42,20 @@
   <li>Product Price: <code>/storefront/component/product/card/price-unit.html.twig</code></li>
   <li>Header Layout: <code>/storefront/layout/header/logo.html.twig</code></li>
   <li>to list all overridable templates <code>find vendor/shopware/storefront/Resources/views -type f -name "*.html.twig"</code></li>
-  <li>...more to come</li>
+  <li>after changes done:
+    <ul>
+      <li><code>bin/console cache:clear</code></li>
+      <li><code>bin/console theme:compile</code></li>
+      <li><code>bin/console assets:install</code></li>
+    </ul>  
+  </li>
 </ul>
 
 <h2>View Events</h2>
 <ul>
   <li><code>bin/console debug:event</code></li>
 </ul>
+
 
 
 
