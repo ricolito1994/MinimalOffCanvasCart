@@ -17,7 +17,7 @@
           "username": "dockware", 
           "password": "dockware", 
           "remotePath": "/var/www/html", 
-          "context": "c:/<yourfoldername>/src", 
+          "context": "c:/(yourfoldername)/src", 
           "uploadOnSave": true, 
           "syncOption": { 
               "delete": true 
@@ -88,6 +88,7 @@
 <ul>
   <li><code>bin/console debug:event</code></li>
 </ul>
+
 
 
 
