@@ -2,6 +2,34 @@
 
 <p>A shopware 6 plugin for minimal off canvas cart for newly added items and cross selling items.</p>
 
+<h3>Setup SFTP to your IDE</h3>
+<p>for this we are using VSCODE</p>
+<ul>
+  <li>download extension called SFTP by Natizyskunk</li>
+  <li>create .vscode inside your project root</li>
+  <li>create a file called sftp.json</li>
+  <li>
+    <pre>
+      { 
+          "name": "shopware", 
+          "host": "localhost", 
+          "port": 22, 
+          "username": "dockware", 
+          "password": "dockware", 
+          "remotePath": "/var/www/html", 
+          "context": "c:/<yourfoldername>/src", 
+          "uploadOnSave": true, 
+          "syncOption": { 
+              "delete": true 
+          } 
+      }
+    </pre>
+  </li>
+  <li>
+    <pre>ctrl + shift + p</pre> to your .vscode then search sftp
+  </li>
+</ul>
+
 <h3>SETUP</h3>
 
 <p>Assuming you have setup shopware 6 app dockerized in your local.</p>
@@ -55,6 +83,7 @@
 <ul>
   <li><code>bin/console debug:event</code></li>
 </ul>
+
 
 
 
