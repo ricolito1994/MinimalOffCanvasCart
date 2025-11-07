@@ -29,6 +29,10 @@
     <code>ctrl + shift + p</code> to your .vscode then search sftp
   </li>
   <li>Your code/changes should be uploaded to your shopware container.</li>
+  <li>
+      from your shopware container to your shopware local folder: <code>docker cp shopware:/var/www/html/. ./src</code>
+      <p>for example: if you create a migration which generates a file on your shopware container.</p>
+  </li>
 </ul>
 
 <h3>SETUP</h3>
@@ -84,6 +88,7 @@
 <ul>
   <li><code>bin/console debug:event</code></li>
 </ul>
+
 
 
 
