@@ -26,8 +26,9 @@
     </pre>
   </li>
   <li>
-    <pre>ctrl + shift + p</pre> to your .vscode then search sftp
+    <code>ctrl + shift + p</code> to your .vscode then search sftp
   </li>
+  <li>Your code/changes should be uploaded to your shopware container.</li>
 </ul>
 
 <h3>SETUP</h3>
@@ -83,6 +84,7 @@
 <ul>
   <li><code>bin/console debug:event</code></li>
 </ul>
+
 
 
 
