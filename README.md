@@ -6,7 +6,7 @@
 <p>for this we are using VSCODE</p>
 <ul>
   <li>download extension called SFTP by Natizyskunk</li>
-  <li>create .vscode inside your project root</li>
+  <li>create .vscode folder/directory inside your project root</li>
   <li>create a file called sftp.json</li>
   <li>
     <pre>
@@ -88,6 +88,7 @@
 <ul>
   <li><code>bin/console debug:event</code></li>
 </ul>
+
 
 
 
